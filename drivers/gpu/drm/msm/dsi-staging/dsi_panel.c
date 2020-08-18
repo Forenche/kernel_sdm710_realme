@@ -730,7 +730,7 @@ static int dsi_panel_power_off(struct dsi_panel *panel)
 
 	return rc;
 }
-static int dsi_panel_tx_cmd_set(struct dsi_panel *panel,
+int dsi_panel_tx_cmd_set(struct dsi_panel *panel,
 				enum dsi_cmd_set_type type)
 {
 	int rc = 0, i = 0;
