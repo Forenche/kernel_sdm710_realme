@@ -8077,6 +8077,7 @@ static int smb2_usb_get_prop(struct power_supply *psy,
 /* Jianchao.Shi@BSP.CHG.Basic, 2017/02/18, sjc Add for OTG sw */
 	case POWER_SUPPLY_PROP_OTG_SWITCH:
 		val->intval = oppo_get_otg_switch_status();
+		break;
 
 	case POWER_SUPPLY_PROP_OTG_ONLINE:
 		val->intval = oppo_get_otg_online_status();
