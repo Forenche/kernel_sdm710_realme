@@ -3760,7 +3760,7 @@ static ssize_t xhci_link_compliance_store(struct device *dev,
 }
 
 static DEVICE_ATTR_RW(xhci_link_compliance);
-
+extern int oppo_ccdetect_support_check(void);
 static int dwc3_msm_probe(struct platform_device *pdev)
 {
 	struct device_node *node = pdev->dev.of_node, *dwc3_node;
@@ -4871,8 +4871,7 @@ static void dwc3_otg_sm_work(struct work_struct *w)
 		if (!test_bit(B_SESS_VLD, &mdwc->inputs) ||
 				!oppo_test_id(mdwc)) {
 #endif
-				!test_bit(ID, &mdwc->inputs)) {
-			dev_dbg(mdwc->dev, "!id || !bsv\n");
+				dev_dbg(mdwc->dev, "!id || !bsv\n");
 			mdwc->drd_state = DRD_STATE_IDLE;
 			cancel_delayed_work_sync(&mdwc->sdp_check);
 			dwc3_otg_start_peripheral(mdwc, 0);
